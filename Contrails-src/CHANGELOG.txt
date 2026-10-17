@@ -1,0 +1,50 @@
+Contrails — Changelog
+
+1.5
+- Particles: no more visible "steps" where particle detail changes with distance. Puffs that are dropped
+  further away now fade out smoothly while the remaining ones grow.
+- Particles: the start of the trail no longer breaks up into separate dots; neighbouring puffs always overlap.
+- Particles: each puff is now made of several layers spread in 3D, so it looks volumetric and no longer
+  visibly turns with the camera. Puff tilt is fixed in the world instead of following the camera.
+- New particle settings (window and settings.cfg): quality (detail far away), spacing (distance between
+  puffs, in contrail widths) and layers per puff.
+
+1.4
+- Realistic contrails have softer, more transparent edges.
+- Contrails now fade in gradually behind the engine. New "fadeIn" setting (per mode) controls how long it
+  takes to go from invisible to full density.
+- New "Vapour as particles" option (per mode): draws the vapour as cloud-like puffs instead of a ribbon.
+  Puffs stay fixed in the air; far away they are merged to keep the particle count low.
+- Settings window redesigned: grey background with a light grey border, a close (×) button in the corner,
+  and a text box next to every slider to type any value.
+- The settings window is in Russian when the game language is Russian, otherwise in English.
+- Presets: type a name and press Save to store the current settings, pick one from the list below and press
+  Load to bring it back (then Apply). Presets are stored in GameData/Contrails/PluginData/Presets.
+
+1.3
+- Settings window in the toolbar (needs Toolbar Controller with ClickThroughBlocker and SpaceTuxLibrary).
+  Changes are applied in flight and saved to settings.cfg when you press Apply. Without Toolbar Controller
+  the mod still works, just without the window.
+- Realistic mode reworked to match real photos: thin parallel lines right behind the engines that within
+  a few seconds spread into a wide, lumpy band (about 3x wider after 1 s, 10x after 3 s, 18x after 6 s),
+  then slowly keep spreading.
+- New textures for realistic contrails: cloud-like lumpy edges, denser rims and lengthwise streaks.
+- Settings file comments are now in English.
+
+1.2
+- Advanced Jet Engine (AJE) compatibility: contrails now appear behind AJE turbojets, ramjets, piston engines and rotors. Electric propellers leave no contrail. Previously AJE engines had no contrails at all.
+- Two contrail modes, switched with the "mode" line in settings.cfg:
+  arcade — War Thunder style;
+  realistic — thin, crisp lines from each engine with a gap behind the nozzle. They last 2 minutes and gradually spread out.
+- Each mode has its own settings block (ARCADE / REALISTIC): lifetime, growth, opacity and nozzle gap (new "gap" setting).
+- Thin contrails in the distance no longer flicker or disappear.
+- Contrails from AJE propeller engines are no longer as wide as the propeller.
+
+1.1
+- The shadow no longer shows through clouds: EVE clouds now cover it.
+- If there's a cloud below the contrail, the shadow falls on the cloud top. On broken clouds it appears in patches.
+- One shadow per aircraft: on multi-engine planes the shadow no longer turns too dark.
+- settings.cfg is now reloaded every time you enter flight. Before, changes only took effect after restarting the game, which is why "growth" changes didn't show up.
+
+1.0
+- First version: white contrail at 8–13 km altitude behind air-breathing engines. Stays in the air for 50 s, expands 3x, looks volumetric and casts a soft shadow on the ground.
